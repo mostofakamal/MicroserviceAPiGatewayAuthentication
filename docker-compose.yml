@@ -1,0 +1,24 @@
+version: "3.4"
+
+services:
+  testidentityserver:
+    image: testidentityserver:latest
+    build:
+      context: .
+      dockerfile: TestIdentityServer/Dockerfile
+    ports:
+      - 6005:80
+  testapigw:
+    image: testapigw:latest
+    build:
+      context: .
+      dockerfile: OcelotAPIGw/Dockerfile
+    ports:
+      - 6006:80
+  sampleapi:
+    image: sampleapi:latest
+    build:
+      context: .
+      dockerfile: SampleAPI/Dockerfile
+    ports:
+      - 6007:80

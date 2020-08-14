@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: apigw
+  template:
+    metadata:
+      labels:
+        app: apigw
+    spec:
+      containers:
+        - name: apigwcontainer
+          image: testapigw:latest
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identityserver
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: identityserver
+  template:
+    metadata:
+      labels:
+        app: identityserver
+    spec:
+      containers:
+        - name: identityservercontainer
+          image: testidentityserver:latest
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapi
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampleapi
+  template:
+    metadata:
+      labels:
+        app: sampleapi
+    spec:
+      containers:
+        - name: sampleapicontainer
+          image: sampleapi:latest
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 80
