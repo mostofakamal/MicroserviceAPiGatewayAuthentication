@@ -1,6 +1,6 @@
 # Microservice Api Gateway
 
-Api Gateway is called the Backends for Frontends (BFF) . In Microservice architecture it plays a crucial role in performing cross cutting and infrastructural concerns e.g. Authentication, Curcuit breaking, Retry policy, Aggregation and so on. This project demonstrates basic API gateway for a microservice and how authentication can be done in API Gateway set up using OAuth and Open Id Connect in Microservice architecture . The project also includes Kuebernetes deployment yaml files for deploying these applications in a kubernetes cluster
+Api Gateway is called the Backends for Frontends (BFF) . In Microservice architecture it plays a crucial role in performing cross cutting and infrastructural concerns e.g. Authentication, Curcuit breaking, Retry policy, Aggregation and so on. This project demonstrates basic API gateway for a microservice and how authentication can be done in API Gateway set up using OAuth and Open Id Connect in Microservice architecture . The project also includes Kuebernetes deployment yaml files for deploying these applications in a kubernetes cluster. If you have any further queries please contact me @  [mailto](mailto:sumon154@gmail.com)
 
 ## The project is developed with following tools and technologies
 
